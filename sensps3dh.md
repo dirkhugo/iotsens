@@ -191,7 +191,7 @@ However, this approach requires again human intervention and/or a
    detection may become available for authentication purposes.
 
    3GPP is studying for Rel. 19 the topic of Integrated Sensing and
-   Communication {{TR22.837}}.  Wireless sensing technologies as NR-based
+   Communication {{TR22.837}}.  Wireless sensing technologies as New Radio (NR)-based
    sensing aim at acquiring information about a remote object while the
    corresponding perception data can be utilized for analysis to obtain
    meaningful information.
@@ -212,7 +212,7 @@ However, this approach requires again human intervention and/or a
    sensors or cameras.  LED (Light Emitting Diode) using LED light
    indicator and/or emitter available on the device can support LED
    light based authentication, e.g., via a smartphone with a client for
-   certification.  Experiments on such an approach has been set up and
+   certification.  Experiments on such an approach have been set up and
    tested during lighthouse project (see, e.g., {{Lins18}}, {{Oden18}}).
    
    Criteria for choice of the corresponding technology depend on the use
@@ -307,9 +307,6 @@ by providing a third party with a token.  Since such
    assistance in message exchange for authenticating in-band key
    exchange.
    
-   More protocols for authentication during secure bootstrapping are
-   summarized and reviewed in {{irtf-t2trg-secure-bootstrapping}}.
-
 
 ## Assessment of Existing Authentication Methods
 
@@ -323,7 +320,7 @@ by providing a third party with a token.  Since such
    unique description in terms of parameters, etc.) may be the only
    prerequisite for authentication.  In addition, in case of radio
    sensing no other interface at the IoT device would be required
-   beyond the radio interfacew which can be used for both, communication
+   beyond the radio interface which can be used for both, communication
    and the OOB transmission of the identity and unique token.   
 
 # The Need for New Authentication Models
@@ -357,9 +354,7 @@ robust but easy to apply authentication mechanisms.
 # Acknowledgements
 
 Discussions with Jan Janak, Henning Schulzrinne, and Michael Richardson as well as a review by Janfred Rieckers 
-helped us improve the draft.
-
-
+and Jari Arkko helped us improve the draft.
 
 --- back
 
