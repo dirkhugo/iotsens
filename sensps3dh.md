@@ -188,13 +188,18 @@ However, this approach requires again human intervention and/or a
    and receiver can be detected and tracked. This way, using feature
    extraction and classification of artificial intelligence (AI), more
    higher level tasks like human activity recognition and object
-   detection may become available for authentication purposes.
+   detection may become available for authentication purposes.  In addition to 
+   already proposed use cases as room sensing, i.e., presence detection, gesture 
+   recognition, or building a 3D picture of an environment also the unambigous identification
+   of an IoT device or the owner of that device could be achieved.
 
    3GPP is studying for Rel. 19 the topic of Integrated Sensing and
    Communication {{TR22.837}}.  Wireless sensing technologies as New Radio (NR)-based
    sensing aim at acquiring information about a remote object while the
    corresponding perception data can be utilized for analysis to obtain
-   meaningful information.
+   meaningful information.  Here use cases on combining sensor data with other (e.g., location)
+   and transparent sensing as well as protection of sensing information may be
+   adapted to provide information usable for IoT device authentication.
 
 # Conventions and Terminology
 
@@ -295,16 +300,15 @@ provides means for authentication both devices and the network and specifies a S
    authentication framework for network access of a peer towards and 
    authenticator or authentication server.  Advantage of EAP for IoT is
    the support of multiple authentication mechanisms without need for
-   pre-negotiation.
-   Nimble out-of-band authentication for EAP or EAP-NOOB {{RFC9140}}
-   applies EAP to very simple IoT devices without pre-established (e.g., manufacturer provided certificate) relation with server or user nor a
-   pre-provisioned identifier or credentials.  For sake of security they need, however, a second interface
+   pre-negotiation.  Recently, Nimble out-of-band authentication for EAP or EAP-NOOB {{RFC9140}}
+was proposed to apply EAP to very simple IoT devices. Here, the need for pre-established (e.g., manufacturer 
+provided certificate) relation with server or user or pre-provisioning of identifier or credentials could be avoided. 
+For sake of security they need, however, a second interface
    for out-of-band communication.  This OOB channel enables the device to
    send critical data needed, i.e., a secret nonce to EAP server.
-   EAP-NOOB protocol architecture can make use of RADIUS or DIAMETER
-   to encode EAP messages.  However, EAP-NOOB is based on user
+In addition, EAP ecosystem may be too complex for simple IoT devices and EAP-NOOB would require user
    assistance in message exchange for authenticating in-band key
-   exchange.
+   exchange. Therefore a more simple approach should be envisioned here.
    
 
 ## Assessment of Existing Authentication Methods
