@@ -188,13 +188,18 @@ However, this approach requires again human intervention and/or a
    and receiver can be detected and tracked. This way, using feature
    extraction and classification of artificial intelligence (AI), more
    higher level tasks like human activity recognition and object
-   detection may become available for authentication purposes.
+   detection may become available for authentication purposes.  In addition to 
+   already proposed use cases as room sensing, i.e., presence detection, gesture 
+   recognition, or building a 3D picture of an environment also the unambigous identification
+   of an IoT device or the owner of that device could be achieved.
 
    3GPP is studying for Rel. 19 the topic of Integrated Sensing and
-   Communication {{TR22.837}}.  Wireless sensing technologies as NR-based
+   Communication {{TR22.837}}.  Wireless sensing technologies as New Radio (NR)-based
    sensing aim at acquiring information about a remote object while the
    corresponding perception data can be utilized for analysis to obtain
-   meaningful information.
+   meaningful information.  Here use cases on combining sensor data with other (e.g., location)
+   and transparent sensing as well as protection of sensing information may be
+   adapted to provide information usable for IoT device authentication.
 
 # Conventions and Terminology
 
@@ -212,7 +217,7 @@ However, this approach requires again human intervention and/or a
    sensors or cameras.  LED (Light Emitting Diode) using LED light
    indicator and/or emitter available on the device can support LED
    light based authentication, e.g., via a smartphone with a client for
-   certification.  Experiments on such an approach has been set up and
+   certification.  Experiments on such an approach have been set up and
    tested during lighthouse project (see, e.g., {{Lins18}}, {{Oden18}}).
    
    Criteria for choice of the corresponding technology depend on the use
@@ -278,14 +283,14 @@ by providing a third party with a token.  Since such
    request of a device with a one-way channel via a secondary device,
    such as a smartphone.
 
-   {{RFC8995}} on 'Bootstrapping Remote Secure Key Infrastructure' (BRSKI)
-   deals with authentication of devices, including sending
-   authorizations to the device as to what network they should join, and
-   how to authenticate that network by specifying automated
-   bootstrapping of an Autonomic Control Plane (ACP) {{RFC8994}}.  BRSKI
-   protocol specifies Secure Key Infrastructure (SKI) bootstrapping
-   using manufacturer-installed X.509 certificates combined with a
-   manufacturer's authorizing service, both online and offline.
+Task of a Public Key Infrastructure (PKI) with its various components (authorities)
+is to manage (inluding generation, distribution, operational usage, secure storage
+as well as revocation) certificates (e.g., of type X.509) to enable authentication and identification of IoT devices.
+The role of a IoT client to communicate with
+PKI system may be played by the local access point which usally has corresponding processing capabilities rather than the simple and cheap IoT devices.
+
+In case of manufacturer-installed X.509 certificates the 'Bootstrapping Remote Secure Key Infrastructure' (BRSKI) protocol {{RFC8995}}
+provides means for authentication both devices and the network and specifies a Secure Key Infrastructure (SKI) for bootstrapping.
    Bootstrapping is completed when the cryptographic identity of the new
    SKI is successfully deployed to the device.  A locally issued
    certificate can be deployed to the device via the established secure
@@ -295,21 +300,16 @@ by providing a third party with a token.  Since such
    authentication framework for network access of a peer towards and 
    authenticator or authentication server.  Advantage of EAP for IoT is
    the support of multiple authentication mechanisms without need for
-   pre-negotiation.
-   Nimble out-of-band authentication for EAP or EAP-NOOB {{RFC9140}}
-   applies EAP to simple IoT devices.  These devices are characterized 
-   by not having pre-established relation with server or user nor a
-   pre-provisioned identifier or credentials, but a second interface
-   for out-of-band communication.  OOB channel enables the device to
+   pre-negotiation.  Recently, Nimble out-of-band authentication for EAP or EAP-NOOB {{RFC9140}}
+was proposed to apply EAP to very simple IoT devices. Here, the need for pre-established (e.g., manufacturer 
+provided certificate) relation with server or user or pre-provisioning of identifier or credentials could be avoided. 
+For sake of security they need, however, a second interface
+   for out-of-band communication.  This OOB channel enables the device to
    send critical data needed, i.e., a secret nonce to EAP server.
-   EAP-NOOB protocol architecture can make use of RADIUS or DIAMETER
-   to encode EAP messages.  However, EAP-NOOB is based on user
+In addition, EAP ecosystem may be too complex for simple IoT devices and EAP-NOOB would require user
    assistance in message exchange for authenticating in-band key
-   exchange.
+   exchange. Therefore a more simple approach should be envisioned here.
    
-   More protocols for authentication during secure bootstrapping are
-   summarized and reviewed in {{irtf-t2trg-secure-bootstrapping}}.
-
 
 ## Assessment of Existing Authentication Methods
 
@@ -323,7 +323,7 @@ by providing a third party with a token.  Since such
    unique description in terms of parameters, etc.) may be the only
    prerequisite for authentication.  In addition, in case of radio
    sensing no other interface at the IoT device would be required
-   beyond the radio interfacew which can be used for both, communication
+   beyond the radio interface which can be used for both, communication
    and the OOB transmission of the identity and unique token.   
 
 # The Need for New Authentication Models
@@ -357,9 +357,7 @@ robust but easy to apply authentication mechanisms.
 # Acknowledgements
 
 Discussions with Jan Janak, Henning Schulzrinne, and Michael Richardson as well as a review by Janfred Rieckers 
-helped us improve the draft.
-
-
+and Jari Arkko helped us improve the draft.
 
 --- back
 
